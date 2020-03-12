@@ -4,19 +4,16 @@ class Post
 
     @@all = []
 
-    attr_reader :title, :author, :author_name
+    attr_reader :title
+    attr_accessor :author
 
     def initialize (title)
         @title = title
         @@all << self
     end
 
-    def title=(title)
-        @title = title
-    end
-
-    def author
-        self.author ?  self.author.name : nil 
+    def author_name
+        author ?  author.name : nil 
     end
 
     def self.all
